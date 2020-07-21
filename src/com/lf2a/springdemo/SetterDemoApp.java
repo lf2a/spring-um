@@ -2,29 +2,21 @@ package com.lf2a.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class HelloSpringApp {
-
+public class SetterDemoApp {
     public static void main(String[] args) {
-
-        // carrega o arquivo de configuração spring
+        // carregando arquivo de configuração spring
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        // recebe o bean do spring container
-        Coach theCoach = context.getBean("myCoach", Coach.class);
+        // obtendo o bean do container spring
+        CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
 
-        // chama o método do bean
+        // chamando métodos do bean
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
+        System.out.println(theCoach.getEmailAddress());
+        System.out.println(theCoach.getTeam());
 
-        // fecha o contexto
+        // fechando o contexto
         context.close();
     }
-
 }
-
-
-
-
-
-
-
