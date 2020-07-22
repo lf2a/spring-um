@@ -21,6 +21,16 @@ public class TrackCoach implements Coach {
         return "Just do it: " + fortuneService.getFortune();
     }
 
+    // init method: irá ser chamado quando o bean for inicializado
+    public void doMyStartupStuff() {
+        System.out.println("TrackCoach: inside method doMyStartupStuff");
+    }
+
+    // destroy method: irá ser chamado quando o bean for destruido
+    public void doMyStartupStuff2() {
+        // este método nao ira ser chamado se o escopo for "prototype"
+        System.out.println("TrackCoach: inside method doMyStartupStuff2");
+    }
 }
 
 
